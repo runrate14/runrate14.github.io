@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩姨-传统养生智慧与家常菜谱分享平台</title>
+    <meta name="description" content="韩姨专注于传统养生智慧、科学饮食搭配与家常菜谱分享。提供产后恢复、四季养生食谱、儿童辅食制作及慢病调理方案，助您吃出健康好身体。">
+    <meta name="keywords" content="韩姨,养生食谱,家常菜谱,产后恢复,四季养生,科学饮食">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8d6e63; /* 暖褐，代表传统与滋养 */
+            --primary-hover: #6d4c41;
+            --accent-color: #ffab91; /* 柔和橘色，代表食欲与活力 */
+            --bg-color: #fdfbf7; /* 暖白，护眼背景 */
+            --card-bg: #ffffff;
+            --text-main: #3e2723;
+            --text-sub: #795548;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(141, 110, 99, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-sub);
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 6px 16px;
+            cursor: pointer;
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #efebe9 0%, #fff 100%);
+            padding: 60px 0;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-sub);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(141, 110, 99, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            width: 100%;
+            height: 350px;
+        }
+
+        /* 热门分类 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .cat-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .category-card p {
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        /* 食谱精选 */
+        .recipes-section {
+            padding: 40px 0;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .recipe-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .recipe-img {
+            height: 200px;
+            width: 100%;
+            position: relative;
+        }
+
+        .recipe-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .recipe-content {
+            padding: 20px;
+        }
+
+        .recipe-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .recipe-desc {
+            font-size: 14px;
+            color: var(--text-sub);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* 养生小贴士 */
+        .tips-section {
+            background-color: #efebe9;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        .tips-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .tips-article {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+        }
+
+        .tips-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tip-item {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .tip-item h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .tip-item p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #3e2723;
+            color: #d7ccc8;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #5d4037;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 14px;
+            }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+            .cta-group {
+                justify-content: center;
+            }
+            .hero-image img {
+                height: 250px;
+            }
+            .tips-container {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>韩姨</span> 汇
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">家常菜谱</a></li>
+                    <li><a href="#">养生保健</a></li>
+                    <li><a href="#">产后调理</a></li>
+                    <li><a href="#">食材百科</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">🔍 搜索食谱</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>传承东方智慧，吃出健康生活</h1>
+                    <p>韩姨汇聚数百道传统家常菜与科学养生方案，从食材挑选到烹饪技巧，为您提供全方位的家庭饮食指导。</p>
+                    <div class="cta-group">
+                        <a href="#" class="btn btn-primary">开始探索食谱</a>
+                        <a href="#" class="btn btn-outline">了解养生理念</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- 使用picsum作为占位符，模拟食材图片 -->
+                    <img src="https://picsum.photos/seed/koreanfood/600/400" alt="健康营养家常菜">
+                </div>
+            </div>
+        </section>
+
+        <!-- 分类导航 -->
+        <section class="container">
+            <div class="section-title">
+                <h2>热门养生分类</h2>
+                <p>根据不同人群与季节，定制专属饮食方案</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <span class="cat-icon">🍲</span>
+                    <h3>家常炖汤</h3>
+                    <p>滋补养生，暖胃暖心</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">👶</span>
+                    <h3>儿童辅食</h3>
+                    <p>营养均衡，好消化</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🤰</span>
+                    <h3>产后恢复</h3>
+                    <p>科学坐月子，催乳食谱</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🥗</span>
+                    <h3>轻食减脂</h3>
+                    <p>低卡低脂，清爽不油腻</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">👵</span>
+                    <h3>老年养生</h3>
+                    <p>三高调理，软烂易嚼</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🌸</span>
+                    <h3>春季养生</h3>
+                    <p>春日养肝，清淡去火</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 食谱推荐 -->
+        <section class="recipes-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>精选食谱推荐</h2>
+                    <p>今日人气食谱，简单易学，营养美味</p>
+                </div>
+                <div class="recipe-grid">
+                    <!-- Recipe 1 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <span class="recipe-tag">人气TOP1</span>
+                            <img src="https://picsum.photos/seed/porridge/400/300" alt="五红粥">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">五红汤：女性气血调理圣品</h3>
+                            <p class="recipe-desc">红豆、红枣、花生、枸杞搭配，简单炖煮，补血益气，适合经期后及术后恢复食用。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 1小时</span>
+                                <span>🔥 难度：简单</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 2 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <span class="recipe-tag">家常菜</span>
+                            <img src="https://picsum.photos/seed/soup/400/300" alt="鲫鱼豆腐汤">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">鲫鱼豆腐汤：鲜美滋补首选</h3>
+                            <p class="recipe-desc">汤色奶白，肉质鲜嫩。富含优质蛋白，易于消化吸收，是全家老小的营养汤品。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 45分钟</span>
+                                <span>🔥 难度：中等</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 3 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <span class="recipe-tag">宝宝辅食</span>
+                            <img src="https://picsum.photos/seed/babyfood/400/300" alt="南瓜小米粥">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">南瓜小米粥：宝宝第一口辅食</h3>
+                            <p class="recipe-desc">口感细腻，香甜软糯。富含膳食纤维和维生素，帮助宝宝肠胃蠕动，健康成长。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 30分钟</span>
+                                <span>🔥 难度：极简</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 4 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <span class="recipe-tag">素食</span>
+                            <img src="https://picsum.photos/seed/salad/400/300" alt="什锦蔬菜沙拉">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">什锦蔬菜沙拉：低卡清爽午餐</h3>
+                            <p class="recipe-desc">混合时令蔬菜，搭配低脂油醋汁。色彩丰富，热量极低，适合减脂期食用。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 15分钟</span>
+                                <span>🔥 难度：简单</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 养生小贴士 -->
+        <section class="tips-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>韩姨养生小贴士</h2>
+                    <p>每日一点健康知识，提升生活品质</p>
+                </div>
+                <div class="tips-container">
+                    <div class="tips-article">
+                        <h3>为什么说“早上吃姜，胜过吃参汤”？</h3>
+                        <p style="margin-top: 15px; color: var(--text-sub);">
+                            中医认为早晨是阳气生发之时，生姜性温，具有发汗解表、温中止呕的功效。此时食用少量生姜，有助于促进血液循环，驱散体内寒气，提升一天的活力。但需注意，生姜不可空腹食用，且阴虚火旺者应适量。
+                        </p>
+                        <br>
+                        <h3>厨房里的“天然抗生素”</h3>
+                        <p style="margin-top: 15px; color: var(--text-sub);">
+                            大蒜和洋葱不仅是调味品，更含有大蒜素和槲皮素，具有很好的杀菌消炎作用。在流感高发季节，适当食用生大蒜或洋葱，有助于增强免疫力，预防呼吸道感染。
+                        </p>
+                    </div>
+                    <div class="tips-list">
+                        <div class="tip-item">
+                            <h4>🔴 赤小豆 vs 红豆</h4>
+                            <p>祛湿请认准赤小豆，粗长瘦小，泡水后不易涨大，祛湿效果更佳。</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>🟠 炒菜何时放盐</h4>
+                            <p>建议在菜肴出锅前放盐，既能减少盐的摄入量，又能保持蔬菜的脆嫩口感。</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>🔵 饭后百步走</h4>
+                            <p>饭后适当散步有助于促进胃肠蠕动，但不宜剧烈运动，宜静坐或缓行。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>韩姨汇</h3>
+                    <p style="font-size: 14px; line-height: 1.8; color: #bcaaa4;">
+                        专注于传统饮食文化的传承与现代健康生活的结合。我们致力于为每一个家庭提供科学、安全、美味的饮食解决方案。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门栏目</h4>
+                    <ul>
+                        <li><a href="#">家常菜大全</a></li>
+                        <li><a href="#">四季养生</a></li>
+                        <li><a href="#">食材百科</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">小红书笔记</a></li>
+                        <li><a href="#">抖音食谱</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 韩姨汇 版权所有 | 本网站内容仅供学习交流，请理性看待健康资讯。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
