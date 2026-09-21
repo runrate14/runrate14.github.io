@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="千牛官网下载中心 - 提供阿里云千牛工作台官方安装包，支持PC端与移动端，助您高效管理店铺、处理客服咨询与数据分析。安全、稳定、正版软件下载指南。">
+    <meta name="keywords" content="千牛官网下载,千牛工作台,阿里云千牛,淘宝客服软件,电商管理工具">
+    <title>千牛官网下载 - 阿里云千牛工作台官方客户端与使用指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6a00;
+            --primary-hover: #e65c00;
+            --secondary-color: #1890ff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --bg-body: #f5f7fa;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5eb 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .download-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 32px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-main);
+            border: 1px solid #e1e1e1;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-main);
+            background-color: #fafafa;
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #fff5eb;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Download Center Table */
+        .download-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .download-table th, .download-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .download-table th {
+            background-color: #fafafa;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .download-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .version-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #e6f7ff;
+            color: var(--secondary-color);
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        .size-tag {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 80px;
+        }
+
+        .sidebar-section h3 {
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Installation Guide */
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f1f1f;
+            color: #999;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .download-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" fill="#FF6A00"/>
+                    <path d="M512 140c-205.4 0-372 166.6-372 372s166.6 372 372 372 372-166.6 372-372-166.6-372-372-372z m0 680c-170.1 0-308-137.9-308-308S341.9 204 512 204s308 137.9 308 308-137.9 308-308 308z" fill="#FF6A00" opacity="0.3"/>
+                    <path d="M688 512l-176-176-176 176 176 176 176-176z" fill="#FF6A00"/>
+                </svg>
+                千牛<span>官网下载</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#download">下载中心</a>
+                <a href="#features">功能介绍</a>
+                <a href="#guide">安装指南</a>
+                <a href="#help">帮助中心</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>千牛工作台 - 电商人的一站式管家</h1>
+                <p>阿里云千牛工作台是阿里巴巴为商家打造的免费智能工作台，集店铺管理、客服咨询、数据分析于一体，助您高效经营，服务更专业。</p>
+                <div class="download-actions">
+                    <a href="#download" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PC端下载
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        手机版下载
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container main-content">
+            <!-- Left Column -->
+            <div class="content-area">
+                
+                <!-- Features -->
+                <section id="features">
+                    <div class="section-title">
+                        <span>核心功能</span>
+                    </div>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">💬</div>
+                            <h3>智能客服</h3>
+                            <p>集成阿里云智能客服，自动回复、语义理解，提升接待效率，降低人工成本。</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <h3>数据透视</h3>
+                            <p>实时监控店铺流量、转化率、客单价，多维度数据报表，决策有据可依。</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📦</div>
+                            <h3>订单管理</h3>
+                            <p>统一处理待发货、发货、退款等订单流程，订单状态一目了然。</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <h3>多端同步</h3>
+                            <p>PC端与手机端无缝同步，随时随地处理店铺事务，不错过任何商机。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Download Center -->
+                <section id="download">
+                    <div class="section-title">
+                        <span>下载中心</span>
+                    </div>
+                    <div class="card">
+                        <table class="download-table">
+                            <thead>
+                                <tr>
+                                    <th>软件名称</th>
+                                    <th>版本</th>
+                                    <th>适用系统</th>
+                                    <th>文件大小</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div><strong>千牛工作台</strong></div>
+                                        <div class="size-tag">PC客户端</div>
+                                    </td>
+                                    <td>
+                                        <span class="version-tag">最新版</span> v10.2.0
+                                    </td>
+                                    <td>Windows 10 / Windows 11</td>
+                                    <td class="size-tag">~85 MB</td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary" style="padding: 6px 16px; font-size: 14px;">立即下载</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div><strong>千牛工作台</strong></div>
+                                        <div class="size-tag">Mac客户端</div>
+                                    </td>
+                                    <td>
+                                        <span class="version-tag">最新版</span> v10.2.0
+                                    </td>
+                                    <td>macOS 10.15 及以上</td>
+                                    <td class="size-tag">~90 MB</td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary" style="padding: 6px 16px; font-size: 14px;">立即下载</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div><strong>千牛手机版</strong></div>
+                                        <div class="size-tag">Android / iOS</div>
+                                    </td>
+                                    <td>
+                                        <span class="version-tag">最新版</span> v9.8.0
+                                    </td>
+                                    <td>安卓 / iOS</td>
+                                    <td class="size-tag">应用商店</td>
+                                    <td>
+                                        <a href="#" class="btn btn-secondary" style="padding: 6px 16px; font-size: 14px;">前往应用市场</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Installation Guide -->
+                <section id="guide">
+                    <div class="section-title">
+                        <span>安装指南</span>
+                    </div>
+                    <div class="card">
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>下载安装包</h4>
+                                    <p>点击上方“立即下载”按钮，获取官方安装包。请确保下载来源为千牛官网或阿里云官方渠道。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>运行安装程序</h4>
+                                    <p>双击下载的安装包，选择安装路径，点击“下一步”开始安装。建议安装在非系统盘以避免占用C盘空间。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>登录账号</h4>
+                                    <p>安装完成后，使用您的淘宝或天猫商家账号登录千牛工作台，即可开始管理店铺。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>常见问题 (FAQ)</h3>
+                    <div class="faq-item">
+                        <h4>千牛工作台收费吗？</h4>
+                        <p>千牛工作台是阿里巴巴为商家提供的免费工具，基础功能完全免费使用。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>忘记登录密码怎么办？</h4>
+                        <p>点击登录页面的“忘记密码”链接，通过手机验证码或绑定的邮箱重置密码。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何切换商家账号？</h4>
+                        <p>点击千牛右上角的头像，选择“切换账号”即可登录其他绑定的淘宝或天猫账号。</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-section" style="background: #fff5eb; border: 1px solid #ffe8cc;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 12px;">安全提示</h3>
+                    <p style="font-size: 13px; color: var(--text-main);">请勿从非官方第三方网站下载安装包，以免账号被盗或遭遇木马病毒。官方下载链接始终以本页面为准。</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于千牛</h4>
+                    <ul>
+                        <li><a href="#">千牛简介</a></li>
+                        <li><a href="#">功能特性</a></li>
+                        <li><a href="#">更新日志</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>下载支持</h4>
+                    <ul>
+                        <li><a href="#">PC客户端</a></li>
+                        <li><a href="#">手机APP</a></li>
+                        <li><a href="#">插件市场</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>商家服务</h4>
+                    <ul>
+                        <li><a href="#">商家学院</a></li>
+                        <li><a href="#">运营工具</a></li>
+                        <li><a href="#">规则中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">商家客服</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 阿里巴巴（中国）有限公司 版权所有 | 本站仅提供官方下载指引与信息展示</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
