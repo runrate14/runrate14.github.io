@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩综大全 - 提供最新最全的韩国综艺节目资源、精彩片段、播放指南及分类推荐。涵盖Running Man、无限挑战、新西游记等热门韩综。">
+    <meta name="keywords" content="韩综, 韩国综艺, Running Man, 无限挑战, 韩国综艺大全, 韩国综艺在线观看">
+    <title>韩综-韩国综艺节目全集资源与观看指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --primary-dark: #c2185b;
+            --secondary-color: #2196f3;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 15px;
+            background: #f1f1f1;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 14px;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #999;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #eee;
+        }
+
+        .card-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #666;
+        }
+
+        /* Ranking List */
+        .ranking-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ranking-item {
+            display: flex;
+            background: var(--card-bg);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: var(--border-radius);
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .ranking-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .rank-num {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ddd;
+            width: 30px;
+            text-align: center;
+            margin-right: 15px;
+        }
+
+        .ranking-item:nth-child(1) .rank-num { color: #ff4757; }
+        .ranking-item:nth-child(2) .rank-num { color: #ffa502; }
+        .ranking-item:nth-child(3) .rank-num { color: #2ed573; }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .rank-stats {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: white;
+            padding: 40px 0;
+            margin-bottom: 60px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+            
+            .search-box input {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+                <span>韩综</span>大全
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">综艺分类</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">下载指南</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索韩综名称...">
+                <button type="button">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索无限精彩的韩国综艺节目</h1>
+                <p>汇集《Running Man》、《新西游记》、《认识的哥哥》等经典与热门韩综，提供最新剧集资源、精彩花絮及观看指南。</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Features -->
+            <section class="features">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎬</div>
+                        <div class="feature-title">海量资源</div>
+                        <div class="feature-text">收录超过5000集经典及最新韩综内容</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-title">高速更新</div>
+                        <div class="feature-text">紧跟韩网播出节奏，第一时间更新资源</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-title">精准分类</div>
+                        <div class="feature-text">按类型、嘉宾、制作公司轻松筛选</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💬</div>
+                        <div class="feature-title">互动社区</div>
+                        <div class="feature-text">与粉丝一起讨论剧情，分享观后感</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hot Ranking -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">本周热门榜单</h2>
+                    <a href="#" class="section-more">查看完整榜单 &rarr;</a>
+                </div>
+                <div class="ranking-list">
+                    <a href="#" class="ranking-item">
+                        <div class="rank-num">1</div>
+                        <div class="rank-info">
+                            <div class="rank-title">Running Man (RM) - 第1000集特别企划</div>
+                            <div class="rank-stats">播放量: 12.5万 | 评分: 9.8</div>
+                        </div>
+                    </a>
+                    <a href="#" class="ranking-item">
+                        <div class="rank-num">2</div>
+                        <div class="rank-info">
+                            <div class="rank-title">新西游记5 - 欧尼酱的生日派对</div>
+                            <div class="rank-stats">播放量: 10.2万 | 评分: 9.6</div>
+                        </div>
+                    </a>
+                    <a href="#" class="ranking-item">
+                        <div class="rank-num">3</div>
+                        <div class="rank-info">
+                            <div class="rank-title">认识的哥哥 - 嘉宾：IU & 李泳知特辑</div>
+                            <div class="rank-stats">播放量: 9.8万 | 评分: 9.5</div>
+                        </div>
+                    </a>
+                    <a href="#" class="ranking-item">
+                        <div class="rank-num">4</div>
+                        <div class="rank-info">
+                            <div class="rank-title">无限挑战 - 韩国乡村音乐祭</div>
+                            <div class="rank-stats">播放量: 8.5万 | 评分: 9.4</div>
+                        </div>
+                    </a>
+                    <a href="#" class="ranking-item">
+                        <div class="rank-num">5</div>
+                        <div class="rank-info">
+                            <div class="rank-title">我独自生活 - 超级大忙人篇</div>
+                            <div class="rank-stats">播放量: 7.2万 | 评分: 9.2</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Latest Updates -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">最新更新</h2>
+                    <a href="#" class="section-more">查看更多 &rarr;</a>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/kpop1/400/225" alt="Running Man Episode">
+                            <span class="card-badge">最新</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Running Man 1001期：终极生存游戏</h3>
+                            <p class="card-desc">RM成员回归，挑战前所未有的高难度关卡，寻找隐藏的终极宝藏。</p>
+                            <div class="card-meta">
+                                <span class="tag">综艺</span>
+                                <span>2023-10-15</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/kpop2/400/225" alt="Knowing Bros">
+                            <span class="card-badge">热门</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">认识的哥哥：与金秀贤的深夜对话</h3>
+                            <p class="card-desc">在深夜的节目中，金秀贤分享了从偶像到演员的心路历程。</p>
+                            <div class="card-meta">
+                                <span class="tag">访谈</span>
+                                <span>2023-10-14</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/kpop3/400/225" alt="Two Yoo Project">
+                            <span class="card-badge">更新</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">两日一夜：济州岛美食探险记</h3>
+                            <p class="card-desc">全员济州岛寻宝，品尝当地最地道的海鲜与烤肉。</p>
+                            <div class="card-meta">
+                                <span class="tag">旅行</span>
+                                <span>2023-10-13</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">综艺分类浏览</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card" style="padding: 30px; align-items: center; justify-content: center; height: 150px; background-color: #fff;">
+                        <h3 style="margin-bottom: 10px;">🤝 团队竞技</h3>
+                        <p style="font-size: 14px; color: #666;">Running Man, 两天一夜, 蒙面歌王</p>
+                    </div>
+                    <div class="card" style="padding: 30px; align-items: center; justify-content: center; height: 150px; background-color: #fff;">
+                        <h3 style="margin-bottom: 10px;">🍽️ 美食旅行</h3>
+                        <p style="font-size: 14px; color: #666;">我独自生活, 新西游记, 超人回来了</p>
+                    </div>
+                    <div class="card" style="padding: 30px; align-items: center; justify-content: center; height: 150px; background-color: #fff;">
+                        <h3 style="margin-bottom: 10px;">🎤 综艺音乐</h3>
+                        <p style="font-size: 14px; color: #666;">隐约的彩虹, 我要来了, 搞笑音乐会</p>
+                    </div>
+                    <div class="card" style="padding: 30px; align-items: center; justify-content: center; height: 150px; background-color: #fff;">
+                        <h3 style="margin-bottom: 10px;">❓ 脑力问答</h3>
+                        <p style="font-size: 14px; color: #666;">认识的哥哥, 偶像请回答, 脑力大挑战</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section style="background-color: #f4f6f8; padding: 40px; border-radius: 12px;">
+                <div class="section-header" style="margin-bottom: 30px;">
+                    <h2 class="section-title">常见问题 (FAQ)</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <details style="margin-bottom: 15px; background: white; padding: 15px; border-radius: 8px; cursor: pointer;">
+                        <summary style="font-weight: bold; color: #333;">在哪里可以观看最新的韩综？</summary>
+                        <p style="margin-top: 10px; color: #666;">本站提供最新的韩综资源链接和播放指南。请留意页面顶部的“最新更新”板块，所有资源均已审核，确保高清流畅。</p>
+                    </details>
+                    <details style="margin-bottom: 15px; background: white; padding: 15px; border-radius: 8px; cursor: pointer;">
+                        <summary style="font-weight: bold; color: #333;">这些韩综是官方正版吗？</summary>
+                        <p style="margin-top: 10px; color: #666;">我们致力于为用户提供资源索引和观看建议。请支持正版内容，通过官方流媒体平台（如TVING, Netflix等）观看。</p>
+                    </details>
+                    <details style="margin-bottom: 15px; background: white; padding: 15px; border-radius: 8px; cursor: pointer;">
+                        <summary style="font-weight: bold; color: #333;">如何下载韩综资源？</summary>
+                        <p style="margin-top: 10px; color: #666;">请查看“下载指南”栏目，我们提供BT种子、网盘链接等下载方式，但请注意网络安全，避免下载带有病毒的文件。</p>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>关于韩综大全</h3>
+                    <p style="font-size: 14px; line-height: 1.8; color: #999;">
+                        韩综大全是一个专注于韩国综艺节目的垂直搜索与资源聚合平台。我们致力于让国内观众更方便地发现和欣赏优秀的韩国综艺节目。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul>
+                        <li><a href="#">综艺分类</a></li>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">热门榜单</a></li>
+                        <li><a href="#">下载帮助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>热门综艺</h3>
+                    <ul>
+                        <li><a href="#">Running Man</a></li>
+                        <li><a href="#">新西游记</a></li>
+                        <li><a href="#">认识的哥哥</a></li>
+                        <li><a href="#">无限挑战</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li>合作邮箱: contact@hanjong.com</li>
+                        <li>版权声明: 本站资源均来自互联网，版权归原作者所有。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 韩综大全 版权所有. 仅供学习交流使用.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                      </html>
