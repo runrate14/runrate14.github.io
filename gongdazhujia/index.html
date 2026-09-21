@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攻打祝家庄 - 梁山好汉三打祝家庄全攻略与历史考据</title>
+    <meta name="description" content="本站详细解析《水浒传》中梁山好汉攻打祝家庄的完整战役过程，包括三打祝家庄的战术布局、关键人物介绍、阵法破解方法及历史背景考据。">
+    <meta name="keywords" content="攻打祝家庄,水浒传,三打祝家庄,梁山好汉,祝家庄战役,水浒传解读">
+    <style>
+        :root {
+            --primary-color: #8B0000; /* 深红，象征战争与热血 */
+            --secondary-color: #2F4F4F; /* 深岩灰，象征山寨与稳重 */
+            --accent-color: #DAA520; /* 金色，象征梁山好汉的荣誉 */
+            --bg-color: #F5F5DC; /* 米色宣纸质感 */
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "SimSun", serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header & Nav */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #600000);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            border: 2px solid var(--accent-color);
+            padding: 0 5px;
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url('https://picsum.photos/seed/watermargin_hero/1600/600') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: var(--border-radius);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        /* Main Content Layout */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Battle Strategy Grid */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 180px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* Detailed Timeline */
+        .timeline-section {
+            background-color: white;
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 40px;
+            border-left: 2px solid #ddd;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            border-left: 2px solid var(--primary-color);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Character List */
+        .char-section {
+            margin-bottom: 60px;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .char-card {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .char-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background-color: #eee;
+            border: 3px solid var(--secondary-color);
+            overflow: hidden;
+        }
+
+        .char-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .char-name {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .char-role {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Analysis Section */
+        .analysis-box {
+            background-color: #FFF8DC;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .analysis-box h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-wrapper { flex-direction: column; gap: 15px; }
+            .timeline-item { padding-left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo"><span>水</span>浒兵法</div>
+        <nav>
+            <ul>
+                <li><a href="#overview">战役概览</a></li>
+                <li><a href="#strategy">战术布局</a></li>
+                <li><a href="#timeline">三打经过</a></li>
+                <li><a href="#analysis">深度解析</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>攻打祝家庄</h1>
+        <p>梁山泊与祝家庄的史诗对决：三战定乾坤，智取盘陀路</p>
+        <a href="#strategy" class="btn">研读战役全貌</a>
+    </div>
+</section>
+
+<main class="container">
+    
+    <!-- 战役概览 -->
+    <section id="overview" style="margin-bottom: 60px;">
+        <div class="section-title">
+            <h2>战役概览</h2>
+        </div>
+        <article style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+            <p style="margin-bottom: 15px;">
+                <strong>攻打祝家庄</strong>是《水浒传》中梁山泊势力向外扩张的重要战役，发生于梁山泊好汉排座次之后。祝家庄位于梁山泊西面，是方腊势力在梁山东北方的据点，也是当地一霸。其依仗盘陀路地形复杂、防御坚固以及与扈、李两家结成的同盟，多次挫败梁山好汉的进攻。
+            </p>
+            <p>
+                这场战役最终以梁山好汉发动<strong>“三打祝家庄”</strong>告终。通过分析地形、离间计策以及内部瓦解，宋江最终攻破祝家庄，不仅消除了后顾之忧，更扩大了梁山的影响力，为后续攻打大名府、征讨辽国等战役奠定了基础。
+            </p>
+            <div class="analysis-box">
+                <h4>战略意义</h4>
+                <p>此战并非单纯的武力征服，而是展示了宋江“智取”与“攻心”的统帅能力，同时也暴露了梁山内部缺乏专业军事人才的短板，从而促使团队向专业化转型。</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- 战术布局 -->
+    <section id="strategy" style="margin-bottom: 60px;">
+        <div class="section-title">
+            <h2>战术布局与关键因素</h2>
+        </div>
+        <div class="strategy-grid">
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://picsum.photos/seed/tactics/400/250" alt="地形分析">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">地形优势</span>
+                    <h3>盘陀路</h3>
+                    <p>祝家庄的盘陀路极为复杂，路旁皆是大石，容易让人迷路。初战时，很多好汉因误入死路而被擒，这是祝家庄坚守的关键外因。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://picsum.photos/seed/alliance/400/250" alt="三庄同盟">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">防御体系</span>
+                    <h3>三庄同盟</h3>
+                    <p>祝家庄与扈家庄、李家庄结成“三庄同盟”。一旦一方受袭，其他两家必须全力支援。这种紧密的联盟是梁山难以速战速决的重要原因。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://picsum.photos/seed/spy/400/250" alt="内应策略">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">攻心为上</span>
+                    <h3>离间计策</h3>
+                    <p>宋江并未一味强攻，而是利用孙立、孙新等好汉伪装投奔，利用孙立与栾廷玉的师兄弟关系，成功策反了祝家庄的内部防御。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三打经过 -->
+    <section id="timeline" style="margin-bottom: 60px;">
+        <div class="section-title">
+            <h2>三打经过详解</h2>
+        </div>
+        <div class="timeline-section">
+            <div class="timeline-item">
+                <div class="timeline-year">第一次进攻</div>
+                <div class="timeline-title">初战失利，强攻受阻</div>
+                <p>宋江率领林冲、花荣等将领进攻祝家庄。由于不熟悉地形，林冲在盘陀路中计，被祝龙擒获。随后扈三娘出阵，花荣与之交战不分胜负，但李逵、鲁智深等人因迷路导致兵力分散，最终梁山军被迫撤退。此战暴露了梁山缺乏向导和情报的问题。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">第二次进攻</div>
+                <div class="timeline-title">智取盘陀路，杀退援军</div>
+                <p>宋江吸取教训，通过盘陀路上的石碑辨认出路，解救了林冲。随后，吴用献计，利用孙立等好汉假意投奔祝家庄，以此作为内应。在里应外合之下，梁山军攻破了祝家庄的外围防御，并击败了李家庄和扈家庄的援军，擒获了扈三娘。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">第三次进攻</div>
+                <div class="timeline-title">彻底破庄，活捉栾廷玉</div>
+                <p>在第二次胜利的基础上，宋江整顿兵马，彻底包围祝家庄。此时栾廷玉亲自披挂上阵，虽勇猛过人，但因被孙立等人识破底细且身负重伤，最终在混战中被石秀所杀。祝家庄陷落，宋江在此战中不仅获得了扈三娘作为战利品，更收服了大批降卒。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关键人物 -->
+    <section id="characters" class="char-section">
+        <div class="section-title">
+            <h2>关键人物</h2>
+        </div>
+        <div class="char-grid">
+            <div class="char-card">
+                <div class="char-avatar">
+                    <img src="https://picsum.photos/seed/zhang/100/100" alt="栾廷玉">
+                </div>
+                <div class="char-name">栾廷玉</div>
+                <div class="char-role">祝家庄教头 / 栾廷玉之师弟</div>
+            </div>
+            <div class="char-card">
+                <div class="char-avatar">
+                    <img src="https://picsum.photos/seed/hu/100/100" alt="扈三娘">
+                </div>
+                <div class="char-name">扈三娘</div>
+                <div class="char-role">一丈青 / 祝家庄联姻对象</div>
+            </div>
+            <div class="char-card">
+                <div class="char-avatar">
+                    <img src="https://picsum.photos/seed/zhang/100/100" alt="孙立">
+                </div>
+                <div class="char-name">孙立</div>
+                <div class="char-role">病尉迟 / 内应策反关键人物</div>
+            </div>
+            <div class="char-card">
+                <div class="char-avatar">
+                    <img src="https://picsum.photos/seed/wu/100/100" alt="吴用">
+                </div>
+                <div class="char-name">吴用</div>
+                <div class="char-role">智多星 / 战役总策划</div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>关于《水浒传》专题研究 | 攻打祝家庄历史考据与文学分析</p>
+        <p style="font-size: 0.8rem; opacity: 0.7;">本站内容仅供文学研究与参考，非官方历史记录。</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+</body>
+</html>
