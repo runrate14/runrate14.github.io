@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美服英雄联盟（League of Legends）官方下载、客户端安装指南、账号注册流程、服务器延迟测试及新手快速入门攻略。提供最新的版本更新说明、符文天赋搭配及国服玩家转战美服的详细步骤。">
+    <meta name="keywords" content="美服lol,英雄联盟美服,美服LOL下载,美服LOL客户端,美服LOL账号,美服LOL攻略">
+    <title>美服lol - 英雄联盟美服官方下载与新手入门指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0093d8;
+            --secondary-color: #5e3a85;
+            --accent-color: #e6aa00;
+            --bg-dark: #1a1a1a;
+            --bg-card: #252525;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #007bb8;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--text-muted);
+            color: var(--text-main);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.9), rgba(15, 15, 20, 0.95)), url('https://picsum.photos/seed/lolriot/1600/900') center/cover no-repeat;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Main Content Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #333;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #333;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: var(--accent-color);
+        }
+
+        /* Guide List */
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .guide-item {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .guide-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .guide-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .guide-arrow {
+            color: var(--text-muted);
+        }
+
+        /* Sidebar */
+        aside .widget {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .server-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .server-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(255,255,255,0.03);
+            border-radius: 4px;
+        }
+
+        .server-status {
+            font-size: 0.8rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .status-up { background-color: rgba(0, 147, 216, 0.2); color: var(--primary-color); }
+        .status-down { background-color: rgba(255, 50, 50, 0.2); color: #ff3232; }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+            
+            .header-actions {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>美服LOL</span> 官方指南
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#download">客户端下载</a></li>
+                    <li><a href="#guide">新手指南</a></li>
+                    <li><a href="#server">服务器状态</a></li>
+                    <li><a href="#news">最新资讯</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline" onclick="window.location.href='#login'">登录</button>
+                <button class="btn btn-primary" onclick="window.location.href='#download'">立即下载</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>进入召唤师峡谷，畅享美服LOL</h1>
+                <p>获取最新的英雄联盟美服客户端、官方账号注册教程、符文天赋配置及服务器延迟查询。为您的跨服游戏之旅提供一站式支持。</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary" style="font-size: 1.1rem; padding: 12px 30px;">下载美服客户端</a>
+                    <a href="#guide" class="btn btn-outline" style="font-size: 1.1rem; padding: 12px 30px;">新手快速入门</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container main-grid">
+            <!-- Left Content -->
+            <div class="content-area">
+                
+                <!-- Download Section -->
+                <section id="download">
+                    <div class="section-header">
+                        <h2>客户端下载与安装</h2>
+                        <a href="#" style="font-size: 0.9rem; color: var(--primary-color);">查看所有版本 &rarr;</a>
+                    </div>
+                    <div class="card-grid">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/lolclient/400/250" alt="LOL客户端下载" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">最新版本</span>
+                                <h3 class="card-title">LOL 美服客户端 14.x</h3>
+                                <p class="card-desc">适用于 Windows 10/11 的最新官方安装包，包含最新的英雄平衡性调整与界面优化。</p>
+                                <a href="#" class="btn btn-primary" style="width: 100%; font-size: 0.9rem;">立即下载 (约 9.2GB)</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/lollauncher/400/250" alt="游戏启动器" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">启动工具</span>
+                                <h3 class="card-title">Riot Client 登录器</h3>
+                                <p class="card-desc">统一的游戏启动平台，支持多游戏管理，自动更新与游戏内系统检查。</p>
+                                <a href="#" class="btn btn-primary" style="width: 100%; font-size: 0.9rem;">下载启动器</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/loldns/400/250" alt="加速器推荐" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">网络优化</span>
+                                <h3 class="card-title">网络加速器推荐</h3>
+                                <p class="card-desc">针对美服服务器延迟优化，提供加速节点选择与连接稳定性建议。</p>
+                                <a href="#" class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">查看加速指南</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Guides Section -->
+                <section id="guide">
+                    <div class="section-header">
+                        <h2>新手与进阶指南</h2>
+                    </div>
+                    <div class="guide-list">
+                        <div class="guide-item">
+                            <div class="guide-info">
+                                <h3>美服账号注册全流程</h3>
+                                <p>使用护照或信用卡注册，解决邮箱验证与短信接收问题。</p>
+                            </div>
+                            <span class="guide-arrow">&rarr;</span>
+                        </div>
+                        <div class="guide-item">
+                            <div class="guide-info">
+                                <h3>符文与天赋系统解析</h3>
+                                <p>新赛季符文搭配推荐，针对不同位置（上单、打野、中单等）的出装思路。</p>
+                            </div>
+                            <span class="guide-arrow">&rarr;</span>
+                        </div>
+                        <div class="guide-item">
+                            <div class="guide-info">
+                                <h3>美服服务器延迟测试</h3>
+                                <p>如何使用Ping测试工具检测洛杉矶、圣何塞等服务器节点的延迟。</p>
+                            </div>
+                            <span class="guide-arrow">&rarr;</span>
+                        </div>
+                        <div class="guide-item">
+                            <div class="guide-info">
+                                <h3>皮肤与通行证购买指南</h3>
+                                <p>美服货币（RP）获取途径，皮肤折扣活动时间表及购买注意事项。</p>
+                            </div>
+                            <span class="guide-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- News Section -->
+                <section id="news">
+                    <div class="section-header">
+                        <h2>美服最新资讯</h2>
+                    </div>
+                    <div class="card-grid">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/news1/400/200" alt="新闻图片" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">更新公告</span>
+                                <h3 class="card-title">14.5 版本更新说明</h3>
+                                <p class="card-desc">英雄重做、地图调整及平衡性补丁详情。</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/news2/400/200" alt="新闻图片" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">赛事</span>
+                                <h3 class="card-title">MSI 季中冠军赛赛程</h3>
+                                <p class="card-desc">北美赛区晋级队伍分析与小组赛赛程表。</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/news3/400/200" alt="新闻图片" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">活动</span>
+                                <h3 class="card-title">夏季通行证开启</h3>
+                                <p class="card-desc">限时活动内容、奖励兑换及任务攻略。</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">服务器状态</h3>
+                    <div class="server-list">
+                        <div class="server-item">
+                            <span>NA East (洛杉矶)</span>
+                            <span class="server-status status-up">正常运行</span>
+                        </div>
+                        <div class="server-item">
+                            <span>NA West (圣何塞)</span>
+                            <span class="server-status status-up">正常运行</span>
+                        </div>
+                        <div class="server-item">
+                            <span>Brazil (圣保罗)</span>
+                            <span class="server-status status-up">正常运行</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">热门英雄排行</h3>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">
+                        <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+                            <span>1. Ahri (九尾妖狐)</span>
+                            <span style="color: #ffcc00;">52.4%</span>
+                        </div>
+                        <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+                            <span>2. Jinx (金克丝)</span>
+                            <span style="color: #ffcc00;">51.8%</span>
+                        </div>
+                        <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+                            <span>3. Yasuo (亚索)</span>
+                            <span style="color: #ffcc00;">50.1%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">常见问题 (FAQ)</h3>
+                    <ul style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.8;">
+                        <li><a href="#">Q: 美服需要VPN吗？</a></li>
+                        <li><a href="#">Q: 如何充值美服账号？</a></li>
+                        <li><a href="#">Q: 英雄联盟账号互通吗？</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于美服LOL</h4>
+                    <p style="font-size: 0.9rem; color: #666;">本站提供美服英雄联盟相关的下载、资讯与攻略服务。内容仅供参考，不作为官方唯一依据。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">官方公告</a></li>
+                        <li><a href="#">玩家支持</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏支持</h4>
+                    <ul>
+                        <li><a href="#">账号安全</a></li>
+                        <li><a href="#">防沉迷系统</a></li>
+                        <li><a href="#">举报中心</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023-2024 美服LOL指南. All Rights Reserved. 本页面为非官方网站，仅供学习交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
