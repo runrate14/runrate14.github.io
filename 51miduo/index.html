@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="51米多多官方平台，提供安全便捷的各类生活服务、优惠活动及实用工具下载。致力于为用户提供高效、优质的数字化服务体验。">
+    <meta name="keywords" content="51米多多,米多多,生活服务,工具下载,优惠平台">
+    <title>51米多多-安全便捷的生活服务与工具下载平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00a86b;
+            --primary-dark: #008f5f;
+            --secondary-color: #2c3e50;
+            --accent-color: #ff9f43;
+            --bg-light: #f8f9fa;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #fff;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 168, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #e8f5e9 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.8);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        /* Service Categories */
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+            border-color: transparent;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: #e3f9f1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+        }
+
+        .card-link {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #eee;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .news-list li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .news-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .news-list a {
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .news-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .news-meta {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        /* Download Section */
+        .download-section {
+            background-color: var(--bg-light);
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .download-box {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .download-info {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .download-info h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .download-info p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .download-features {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+
+        .download-btn-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .btn-windows {
+            background: #0078d7;
+            color: #fff;
+        }
+
+        .btn-android {
+            background: #3ddc84;
+            color: #fff;
+        }
+
+        .download-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 15px;
+            display: none;
+            padding-top: 10px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .download-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .download-info {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .download-features {
+                justify-content: center;
+            }
+
+            .download-btn-group {
+                justify-content: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                51<span>米多多</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#services">服务分类</a></li>
+                    <li><a href="#download">软件下载</a></li>
+                    <li><a href="#news">最新资讯</a></li>
+                    <li><a href="#help">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册会员</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badges">
+                <span class="badge">✓ 安全无毒</span>
+                <span class="badge">✓ 官方认证</span>
+                <span class="badge">✓ 持续更新</span>
+            </div>
+            <h1>一站式生活服务与工具平台</h1>
+            <p>51米多多为您提供各类实用软件下载、生活服务指南及优惠活动信息。致力于打造安全、便捷、高效的数字化服务体验。</p>
+            <a href="#download" class="btn btn-primary" style="padding: 12px 40px; font-size: 16px;">立即体验</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="main-layout">
+            
+            <!-- Left Column: Services & Features -->
+            <div class="content-area">
+                <section id="services">
+                    <div class="section-title">
+                        <h2>精选服务分类</h2>
+                        <a href="#" class="card-link">查看全部 &rarr;</a>
+                    </div>
+                    <div class="grid-container">
+                        <!-- Service Card 1 -->
+                        <article class="card">
+                            <div>
+                                <div class="card-icon">🛠️</div>
+                                <h3>实用工具箱</h3>
+                                <p>包含文件转换、格式处理、数据备份等高频实用工具，解决日常办公与生活痛点。</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="card-link">查看工具列表</a>
+                            </div>
+                        </article>
+
+                        <!-- Service Card 2 -->
+                        <article class="card">
+                            <div>
+                                <div class="card-icon">📱</div>
+                                <h3>手机应用推荐</h3>
+                                <p>精选优质安卓与iOS应用，经过人工审核，确保安全性与兼容性，提升手机使用效率。</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="card-link">下载应用</a>
+                            </div>
+                        </article>
+
+                        <!-- Service Card 3 -->
+                        <article class="card">
+                            <div>
+                                <div class="card-icon">🛒</div>
+                                <h3>优惠活动中心</h3>
+                                <p>聚合各大平台热门优惠券与促销信息，帮助用户节省开支，享受更多实惠。</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="card-link">浏览优惠</a>
+                            </div>
+                        </article>
+
+                        <!-- Service Card 4 -->
+                        <article class="card">
+                            <div>
+                                <div class="card-icon">💡</div>
+                                <h3>使用教程指南</h3>
+                                <p>提供详细的使用教程、操作技巧与常见问题解答，新手也能快速上手。</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="card-link">学习教程</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Download Section -->
+                <section id="download" class="download-section">
+                    <div class="section-title">
+                        <h2>热门软件下载</h2>
+                    </div>
+                    <div class="download-box">
+                        <div class="download-info">
+                            <h2>米多多助手 v3.5.0</h2>
+                            <p>集成了文件管理、系统清理、隐私保护等核心功能的一体化助手工具。全新UI设计，操作更流畅，支持多设备同步。</p>
+                            <div class="download-features">
+                                <span class="feature-item">✓ 离线安装包</span>
+                                <span class="feature-item">✓ 智能扫描</span>
+                                <span class="feature-item">✓ 实时更新</span>
+                            </div>
+                            <div class="download-btn-group">
+                                <a href="#" class="download-btn btn-windows">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                                    Windows版
+                                </a>
+                                <a href="#" class="download-btn btn-android">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.8016 0-1.4527-.6511-1.4527-1.4527s.6511-1.4527 1.4527-1.4527 1.4527.6511 1.4527 1.4527-.6511 1.4527-1.4527 1.4527zm-11.046 0c-.8016 0-1.4527-.6511-1.4527-1.4527s.6511-1.4527 1.4527-1.4527 1.4527.6511 1.4527 1.4527-.6511 1.4527-1.4527 1.4527zm10.724-6.6629l1.4036 4.9934h-13.972l1.4036-4.9934c.1096-.3895.4734-.6491.877-.6491h9.4882c.4036 0 .7674.2596.877.6491zm-11.9048 6.6629c-.8016 0-1.4527-.6511-1.4527-1.4527s.6511-1.4527 1.4527-1.4527 1.4527.6511 1.4527 1.4527-.6511 1.4527-1.4527 1.4527z"/></svg>
+                                    Android版
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="help" class="faq-section">
+                    <div class="section-title">
+                        <h2>常见问题解答</h2>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">如何确保下载的软件安全？</div>
+                            <div class="faq-answer">51米多多所有软件均经过人工审核与病毒扫描，确保文件来源可靠且无恶意代码。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">注册会员有什么权益？</div>
+                            <div class="faq-answer">注册后可解锁专属优惠码、参与积分兑换活动，并享受优先客服支持服务。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">软件支持哪些操作系统？</div>
+                            <div class="faq-answer">我们主要提供Windows、macOS及主流Android/iOS系统的兼容版本，具体请查看产品页面。</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar">
+                <!-- News Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">最新资讯</h3>
+                    <ul class="news-list">
+                        <li>
+                            <a href="#">米多多助手3.5版本更新日志发布</a>
+                            <div class="news-meta">2023-10-24</div>
+                        </li>
+                        <li>
+                            <a href="#">秋季限时优惠活动开启，全场5折起</a>
+                            <div class="news-meta">2023-10-22</div>
+                        </li>
+                        <li>
+                            <a href="#">如何正确使用数据恢复工具？</a>
+                            <div class="news-meta">2023-10-18</div>
+                        </li>
+                        <li>
+                            <a href="#">关于用户隐私保护的最新公告</a>
+                            <div class="news-meta">2023-10-15</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="sidebar-widget" style="text-align: center; background: #e9ecef; min-height: 200px; display: flex; align-items: center; justify-content: center; color: #999;">
+                    广告位预留
+                </div>
+
+                <!-- Links Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">友情链接</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <a href="#" style="font-size: 12px; color: var(--text-light);">安全联盟</a>
+                        <a href="#" style="font-size: 12px; color: var(--text-light);">360安全</a>
+                        <a href="#" style="font-size: 12px; color: var(--text-light);">腾讯云</a>
+                        <a href="#" style="font-size: 12px; color: var(--text-light);">阿里云</a>
+                        <a href="#" style="font-size: 12px; color: var(--text-light);">站长之家</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>51米多多</h4>
+                    <p style="font-size: 14px; line-height: 1.8; color: #999;">
+                        51米多多致力于为用户提供安全、便捷、优质的生活服务与软件资源。我们始终坚持以用户为中心，不断创新服务模式。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="#" style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 12px;">微信公众号</a>
+                        <a href="#" style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 12px;">新浪微博</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 51米多多 版权所有 | ICP备88888888号-1</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
